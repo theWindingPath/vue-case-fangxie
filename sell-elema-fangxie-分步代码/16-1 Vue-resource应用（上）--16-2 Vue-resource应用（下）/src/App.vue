@@ -1,7 +1,6 @@
 <template>
   <div>
-    <!-- 将卖家数据传过去 -->
-    <vue-header :maijia_shuju="maijia_shuju"></vue-header>
+    <vue-header></vue-header>
     <div class="tab border-1px-suofang">
       <div class="tab-item">
         <!-- 使用路由组件来导航 v-link -->
@@ -22,14 +21,7 @@
 <script>
   // 引入header组件
   import header from './components/toubu_zujian_mulu/toubu_zujian.vue';
-
-  const ERR_OK = 0;
   export default {
-    data() {
-      return {
-        maijia_shuju: {} // vue会为maijia_shuju自动添加 set/get方法
-      };
-    },
     created() {
       // 通过vue-resource发送ajax请求，获取json数据
       this.$http.get('/api/maijia').then(response => {
@@ -37,9 +29,9 @@
         response = response.body;
         // console.log(response);
         // 判断标识符=0，将获取到数据放到this.seller上
-        if (response.cuowu_biaoshi === ERR_OK) {
+        if (response.cuowu_biaoshi === 0) {
           this.maijia_shuju = response.shuju;
-          // console.log(this.maijia_shuju);
+          console.log(this.maijia_shuju);
         }
       });
     },

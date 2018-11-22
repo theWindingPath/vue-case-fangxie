@@ -1,7 +1,6 @@
 import Vue from 'vue';
 import App from './App';
 import VueRouter from 'vue-router'; // 引入
-import VueResource from 'vue-resource';
 import shangpin_zujian from './components/shangpin_zujian_mulu/shangpin_zujian'; // 引入商品组件
 import pingjia_zujian from './components/pingjia_zujian_mulu/pingjia_zujian';
 import shangjia_zujian from 'components/shangjia_zujian_mulu/shangjia_zujian'; // 可以直接使用components相对路径
@@ -9,7 +8,6 @@ import shangjia_zujian from 'components/shangjia_zujian_mulu/shangjia_zujian'; /
 import 'tongyong_mulu/stylus_mulu/index.styl';
 
 Vue.use(VueRouter); // 安装路由功能
-Vue.use(VueResource);
 
 let app_genshili = Vue.extend(App); // 创建根实例
 
