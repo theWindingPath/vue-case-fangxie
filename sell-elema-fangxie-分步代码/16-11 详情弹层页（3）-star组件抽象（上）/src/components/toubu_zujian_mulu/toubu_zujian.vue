@@ -41,7 +41,7 @@
             <div class="name">{{maijia_shuju.name}}</div>
             <!-- <xingxing></xingxing> -->
             <div class="star-wrapper">
-              <xingxing :daxiao_tupian="48" :pingfen_xingxing="maijia_shuju.score"></xingxing>
+              <xingxing></xingxing>
             </div>
           </div>
         </div>

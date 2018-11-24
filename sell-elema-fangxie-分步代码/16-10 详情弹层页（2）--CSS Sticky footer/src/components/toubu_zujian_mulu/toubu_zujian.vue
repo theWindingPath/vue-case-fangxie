@@ -38,11 +38,6 @@
         <!-- 弹层页(detail-wrapper(detail-main/clearfix)/detial-close(icon-close(i))) -->
         <div class="detail-wrapper clearfix">
           <div class="detail-main">
-            <div class="name">{{maijia_shuju.name}}</div>
-            <!-- <xingxing></xingxing> -->
-            <div class="star-wrapper">
-              <xingxing :daxiao_tupian="48" :pingfen_xingxing="maijia_shuju.score"></xingxing>
-            </div>
           </div>
         </div>
         <div class="detail-close">
@@ -53,8 +48,6 @@
 </template>
 
 <script type="text/ecmascript-6">
-  import xingxing_zujian from 'components/xingxing_zujian_mulu/xingxing_zujian';
-
   // 需要导出其它组件才能引用
   export default{
     props: { // 接收数据
@@ -74,9 +67,6 @@
     },
     created() {
       this.classMap_shuzu = ['decrease', 'discount', 'special', 'invoice', 'guarantee']; // 和supports.type(01234)对应
-    },
-    components: {
-      xingxing: xingxing_zujian
     }
   };
 </script>
@@ -209,26 +199,15 @@
       overflow auto
       background-color rgba(7,17,27,0.8)
       .detail-wrapper
-        width 100%
         min-height 100%
         .detail-main
           margin-top 64px
           padding-bottom 64px
-          .name
-            line-height 16px
-            text-align center
-            font-size 16px
-            font-weight 700
-          .star-wrapper
-            margin-top 16px
-            padding 2px 0
-            text-align center
       .detail-close
         position relative
         width 32px
         height 32px
         margin -64px auto 0 auto
-        clear both
         font-size 32px
 
 </style>
