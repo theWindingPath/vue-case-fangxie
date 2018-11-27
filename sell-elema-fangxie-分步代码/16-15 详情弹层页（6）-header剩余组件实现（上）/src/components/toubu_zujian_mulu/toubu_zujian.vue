@@ -34,8 +34,7 @@
       <div class="background">
         <img :src="maijia_shuju.avatar" width="100%" height="100%" >
       </div>
-      <!-- 添加vue动画 fade，fade-transition, &.fade-enter, &.fade-leave -->
-      <div v-show="detailShow_show" class="detail" transition="fade">
+      <div v-show="detailShow_show" class="detail">
         <!-- 弹层页(detail-wrapper(detail-main/clearfix)/detial-close(icon-close(i))) -->
         <div class="detail-wrapper clearfix">
           <div class="detail-main">
@@ -63,8 +62,7 @@
             </div>
           </div>
         </div>
-        <!-- 点击按钮关闭弹层 -->
-        <div class="detail-close" @click="hide_tanceng_hanshu">
+        <div class="detail-close">
           <i class="icon-close"></i>
         </div>
       </div>
@@ -89,9 +87,6 @@
     methods: {
       showDetail_hanshu () {
         this.detailShow_show = true;
-      },
-      hide_tanceng_hanshu () {
-        this.detailShow_show = false;
       }
     },
     created() {
@@ -229,15 +224,7 @@
       width 100%
       height 100%
       overflow auto
-      // background-color rgba(7,17,27,0.8)
-      transition all 0.5s
-      backdrop-filter: blur(10px)
-      &.fade-transition
-        opacity 1
-        background-color rgba(7,17,27,0.8)
-      &.fade-enter, &.fade-leave
-        opacity 0
-        background-color rgba(7,17,27,0) 
+      background-color rgba(7,17,27,0.8)
       .detail-wrapper
         width 100%
         min-height 100%
