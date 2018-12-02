@@ -26,10 +26,12 @@
                                 <h2 class="name">{{food_meige.name}}</h2>
                                 <p class="desc">{{food_meige.description}}</p>
                                 <div class="extra">
-                                    <span class="count">月售{{food_meige.sellCount}}份</span><span>好评率{{food_meige.rating}}%</span>
+                                    <span>月售{{food_meige.sellCount}}份</span>
+                                    <span>好评率{{food_meige.rating}}%</span>
                                 </div>
                                 <div class="price">
-                                    <span class="newPrice">￥{{food_meige.price}}</span><span class="oldPrice" v-show="food_meige.oldPrice">￥{{food_meige.oldPrice}}</span>
+                                    <span>￥{{food_meige.price}}</span>
+                                    <span v-show="food_meige.oldPrice">￥{{food_meige.oldPrice}}</span>
                                 </div>
                             </div>
                         </li>
@@ -141,26 +143,5 @@
               line-height 14px
               color rgb(7, 17, 27)
               font-size 14px
-            .desc, .extra
-              line-height 10px
-              color rgb(147, 153, 159)
-              font-size 10px
-            .desc
-              margin-bottom 8px
-            .extra
-                .count
-                  margin-right 12px
-            .price
-              line-height 24px
-              font-weight 700
-              .newPrice
-                  margin-right 8px
-                  font-size 14px
-                  color rgb(240, 20, 20)
-              .oldPrice
-                  text-decoration line-through
-                  font-size 10px
-                  color rgb(147, 153, 159) 
-              
 
 </style>
