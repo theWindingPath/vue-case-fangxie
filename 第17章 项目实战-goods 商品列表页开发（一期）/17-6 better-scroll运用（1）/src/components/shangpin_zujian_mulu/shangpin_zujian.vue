@@ -42,8 +42,7 @@
 </template>
 
 <script type="text/ecmascript-6">
-  import Gundong_chajian from 'better-scroll'; // 引入滚动第三方插件better-scroll
-
+  import Gundong_chajian from 'better-scroll'; // 引入
   const ERR_OK = 0;
   // 接收卖家数据，获取goods数据
   export default {
@@ -74,7 +73,6 @@
     },
     methods: {
         _chushihua_hanshu() {
-            // Gundong_chajian() 第一个参数为dom节点
             this.menu_gundong = new Gundong_chajian(this.$els.menuDom, {}); // 实例化better-scroll
 
             this.foods_gundong = new Gundong_chajian(this.$els.foodsDom, {}); // 右侧foods列表滚动
