@@ -56,7 +56,7 @@
         return {
             shangpin_shuju: [],
             gaodu_qujian_shuzu: [], // 区间高度数组
-            shishi_gundong_gaodu_Y: 0 // 初始化为0
+            shishi_gundong_gaodu: 0 // 初始化为0
         };
     },
     computed: {
@@ -65,7 +65,7 @@
             let height1 = this.gaodu_qujian_shuzu[i]; // 当前区间高度
             let height2 = this.gaodu_qujian_shuzu[i + 1]; // 当前元素下一个区间的高度
             // height1和height2形成区间，用滚动高度shishi_gundong_gaodu比较，看看滚动高度落在那个区间里，返回当前区间i
-            if (!height2 || (this.shishi_gundong_gaodu_Y >= height1 && this.shishi_gundong_gaodu_Y < height2)) {
+            if (!height2 || (this.shishi_gundong_gaodu >= height1 && this.shishi_gundong_gaodu < height2)) {
                 return i;
             }
           }
@@ -98,7 +98,7 @@
             }); // 右侧foods列表滚动
 
             this.foods_gundong.on('scroll', (pos) => { // 监听scroll事件
-              this.shishi_gundong_gaodu_Y = Math.abs(Math.round(pos.y)); // pos.y有小数，是负数（需要转换为正整数）
+              this.shishi_gundong_gaodu = Math.abs(Math.round(pos.y)); // pos.y有小数，是负数（需要转换为正整数）
             //   console.log(this.shishi_gundong_gaodu);
                 // console.log(this.xiabiao_dangqian);
             });
