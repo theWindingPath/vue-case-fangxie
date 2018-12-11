@@ -13,10 +13,8 @@
               <div class="desc">另需配送费￥{{deliveryPrice}}元</div>
           </div>
           <div class="content-right">
-              <!-- payDesc描述有三种状态，返回三种字符串，根据价格，介于0-20元 -->
-              <!-- 根据总价动态添加class，大于20绿色高亮 -->
-              <div class="pay" :class="jiesuan_class_computed">
-                  {{jiesuan_miaoshu_computed}}
+              <div class="pay">
+                  ￥{{minPrice}}起送
               </div>
           </div>
       </div>
@@ -32,7 +30,7 @@
                   return [
                       {
                           danjia_shuxing: 12, // 单价
-                          shuliang_shuxing: 2 // 数量
+                          shuliang_shuxing: 1 // 数量
                       },
                       {
                           danjia_shuxing: 10,
@@ -64,24 +62,6 @@
               zonggeshu_bianliang += shangpin_xingcan.shuliang_shuxing; // 累加每个选中的数量count
             });
             return zonggeshu_bianliang;
-          },
-          jiesuan_miaoshu_computed() { // 结算描述
-              if (this.jiage_zongshu_computed === 0) { // 总价格为0
-                  // es6语法
-                  return `￥${this.minPrice}起送`; // 变量放到${}里
-              } else if (this.jiage_zongshu_computed < this.minPrice) { // 总价大于0，小于20
-                  let chajia_bianliang = this.minPrice - this.jiage_zongshu_computed; // 最低价20-当前总价 = 差价
-                  return `还差￥${chajia_bianliang}起送`;
-              } else { // 大于20
-                  return '去结算';
-              }
-          },
-          jiesuan_class_computed() { // 结算class
-              if (this.jiage_zongshu_computed > this.minPrice) { // 总价大于20
-                  return 'goule-gaoliang'; // 绿色高亮class
-              } else {
-                  return 'bugou-class'; // 价格不够
-              }
           }
       }
   };
@@ -170,11 +150,6 @@
                 text-align center
                 font-size 12px
                 font-weight 700
-                // background-color #2b333b
-                &.goule-gaoliang // 钱够了
-                  background-color #00b43c
-                  color #fff
-                &.bugou-class // 钱不够20
-                  background-color #2b333b
+                background-color #2b333b
                 
 </style>
